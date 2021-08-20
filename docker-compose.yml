@@ -2,6 +2,10 @@ version: "3"
 services:
   mlflow:
     build: ./docker_images/mlflow
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+#    volumes:
+#      - "/path/to/google_credentials.json:/path/to/google_credentials.json"
     command: "mlflow server --backend-store-uri ${MLFLOW_BACKEND_STORE_URI} --default-artifact-root ${MLFLOW_DEFAULT_ARTIFACT_ROOT} --host 0.0.0.0 --port 5000"
     restart: always
   nginx:
