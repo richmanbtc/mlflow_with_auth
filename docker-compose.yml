@@ -10,7 +10,7 @@ services:
       - NGINX_BASIC_AUTH_USER=${NGINX_BASIC_AUTH_USER}
       - NGINX_BASIC_AUTH_PASS=${NGINX_BASIC_AUTH_PASS}
     ports:
-      - 8080:80
+      - 80:80
     restart: always
 
   # compute engineからcloud sqlに接続する場合
