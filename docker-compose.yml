@@ -12,3 +12,10 @@ services:
     ports:
       - 8080:80
     restart: always
+
+  # compute engineからcloud sqlに接続する場合
+#  cloudsqlproxy:
+#    image: gcr.io/cloudsql-docker/gce-proxy:1.12
+#    command: /cloud_sql_proxy -instances=${CLOUDSQL_INSTANCES}
+#    ports:
+#      - "5432:5432"
