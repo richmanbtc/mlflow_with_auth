@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mlflow:
+    build: ./docker_images/mlflow
+    environment:
+      - VIRTUAL_HOST=web.localhost
+    command: "mlflow server --backend-store-uri ${MLFLOW_BACKEND_STORE_URI} --default-artifact-root ${MLFLOW_DEFAULT_ARTIFACT_ROOT} --host 0.0.0.0 --port 5000"
+    restart: always
+  nginx:
+    build: ./docker_images/nginx
+    environment:
+      - NGINX_BASIC_AUTH_USER=${NGINX_BASIC_AUTH_USER}
+      - NGINX_BASIC_AUTH_PASS=${NGINX_BASIC_AUTH_PASS}
+    ports:
+      - 8080:80
+    restart: always
