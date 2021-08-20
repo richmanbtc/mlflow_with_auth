@@ -8,7 +8,7 @@ docker-compose up -d
 
 .env.example.testを使うとローカル完結で動く。
 
-## メモ
+## 個人メモ
 
 - google compute engineでbasic認証付きのmlflowを動かすために作ったもの。
 - google compute engine上でdocker-composeでmlflowとnginxを動かす。
