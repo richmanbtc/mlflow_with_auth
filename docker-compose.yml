@@ -17,5 +17,3 @@ services:
 #  cloudsqlproxy:
 #    image: gcr.io/cloudsql-docker/gce-proxy:1.12
 #    command: /cloud_sql_proxy -instances=${CLOUDSQL_INSTANCES}
-#    ports:
-#      - "5432:5432"
